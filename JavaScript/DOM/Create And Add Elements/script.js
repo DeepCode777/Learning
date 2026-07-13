@@ -56,3 +56,12 @@ newpara.innerText = "this is new paragraph for after";
 let divs = document.querySelector("h3");
 divs.after(newpara);
 */
+
+// => step 3] : Delete Element
+// document.querySelector("p").remove();
+
+
+/*
+  1) appendChild()
+  2) removeChild()
+*/

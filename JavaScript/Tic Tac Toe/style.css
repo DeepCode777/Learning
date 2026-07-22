@@ -47,3 +47,26 @@ h2{
   border-radius: 1rem;
   border: none;
 }
+
+#newGame{
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  border: none;
+}
+
+p{
+  font-size: 3rem;
+}
+
+.winner{
+  height: 50vb;
+  width: 50vb;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  margin-top: 25%;
+  gap: 1.5vmin;
+}

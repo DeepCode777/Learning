@@ -7,6 +7,7 @@ let resetB = document.querySelector("#reset");
 // store turn // O=true or X=false
 let turn = true;
 
+
 // store winning patterns - const
 const patterns = [
   [0,1,2],
@@ -53,19 +54,39 @@ const chackwinner = () => {
     let ps0 = boxs[pattern[0]].innerText;
     let ps1 = boxs[pattern[1]].innerText;
     let ps2 = boxs[pattern[2]].innerText;
+    
+    if(ps0 === ps1 && ps1 === ps2){
+      // show winner
+      
+
+    }
   }
 }
 
 // access new game btn
+let newgame = document.querySelector("#newgame");
 // access message container
+let mescon = document.querySelector(".winner")
 // access winner para
+//let win = document.querySelector("p");
+mescon.style.display="none";
 
+let show = () => {
+  win.innerText=`winner is ${ps0}`;
+  mescon.style.display="block";
+  
+};
 // show (winner)
 // set messege winner
 // remove class hide
 // disable box for discontinu game
 
 // disable all buttons
+let disbox = () => {
+  for (let box of boxs) {
+    box.disabled=true;
+  }
+}
 
 // ensble all buttons
 

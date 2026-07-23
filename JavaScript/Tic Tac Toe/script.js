@@ -1,3 +1,5 @@
+// Tic Tac Toe
+
 // Access boxs
 let boxs = document.querySelectorAll(".box");
 
@@ -18,8 +20,7 @@ const patterns = [
   [0,3,6],
   [1,4,7],
   [2,5,8]
-]
-console.log(patterns);
+];
 
 // every boxs need to click at that time event listner work as click event and perform 
 // 1] setinnerText - O=true or X=false
@@ -38,6 +39,7 @@ for(let box of boxs) {
     }
     box.disabled=true;
     // count
+    chackwinner();
   });
 };
 
@@ -55,26 +57,27 @@ const chackwinner = () => {
     let ps1 = boxs[pattern[1]].innerText;
     let ps2 = boxs[pattern[2]].innerText;
     
-    if(ps0 === ps1 && ps1 === ps2){
-      // show winner
-      
-
+    if(ps0 != "" && ps1 != "" && ps2 != ""){
+      if(ps0 === ps1 && ps1 === ps2){
+        // show winner
+        show(ps0);
+      }
     }
   }
 }
 
 // access new game btn
-let newgame = document.querySelector("#newgame");
-// access message container
-let mescon = document.querySelector(".winner")
-// access winner para
-//let win = document.querySelector("p");
-mescon.style.display="none";
+let newgame = document.querySelector("#newGame");
 
-let show = () => {
-  win.innerText=`winner is ${ps0}`;
-  mescon.style.display="block";
-  
+// access message container
+let mescon = document.querySelector(".winner");
+// access winner para
+let win = document.querySelector("p");
+
+let show = (winnerr) => {
+  win.innerText = `Winner is Player ${winnerr} ...!`;
+  mescon.style.display="grid";
+  disbox();
 };
 // show (winner)
 // set messege winner
@@ -86,14 +89,32 @@ let disbox = () => {
   for (let box of boxs) {
     box.disabled=true;
   }
-}
+};
 
 // ensble all buttons
+const enabox = () => {
+  for(let box of boxs){
+    box.disabled = false;
+    box.innerText = "";
+  }
+};
+
+
 
 // reset game function
 // Trun can on for player
 // enable box
 // mess contsiner hide
+const resetGame = () => {
+  turn = true;
+  enabox();
+  mescon.style.display="none";
+};
+
 
 // newgame click = reset game
+newgame.addEventListener("click", resetGame);
+
 // reset click = reset game
+let rs = document.querySelector("#reset");
+rs.addEventListener("click", resetGame);

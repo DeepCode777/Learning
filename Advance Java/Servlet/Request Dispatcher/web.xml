@@ -1,0 +1,23 @@
+<web-app>
+
+    <servlet>
+        <servlet-name>Display</servlet-name>
+        <servlet-class>dispatcher</servlet-class>
+    </servlet>
+  
+    <servlet-mapping>
+        <servlet-name>Display</servlet-name>
+        <url-pattern>/messege</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>second</servlet-name>
+        <servlet-class>add</servlet-class>
+    </servlet>
+  
+    <servlet-mapping>
+        <servlet-name>second</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+  
+</web-app>

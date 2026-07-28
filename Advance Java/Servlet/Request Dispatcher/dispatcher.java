@@ -3,7 +3,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 public class dispatcher extends HttpServlet {
-
+//service()
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
         res.setContentType("text/html");

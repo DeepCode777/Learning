@@ -1,0 +1,23 @@
+<web-app>
+
+    <servlet>
+        <servlet-name>Display</servlet-name>
+        <servlet-class>urlRedirect</servlet-class>
+    </servlet>
+  
+    <servlet-mapping>
+        <servlet-name>Display</servlet-name>
+        <url-pattern>/messege</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>second</servlet-name>
+        <servlet-class>sqr</servlet-class>
+    </servlet>
+  
+    <servlet-mapping>
+        <servlet-name>second</servlet-name>
+        <url-pattern>/sqr</url-pattern>
+    </servlet-mapping>
+  
+</web-app>

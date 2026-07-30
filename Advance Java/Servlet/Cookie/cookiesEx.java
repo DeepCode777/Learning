@@ -2,7 +2,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-@WebSwervlet("/cookieData")
+@WebServlet("/cookieData")
 public class CookiesEx extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
@@ -12,9 +12,10 @@ public class CookiesEx extends HttpServlet {
         PrintWriter out = res.getWriter();
         boolean uvisit = false;
 
+        // create Array for cookies - can be many cookies 
         Cookie[] cookies = req.getCookies();
 
-        // cookies is null or not
+        // check cookies is null or not
         if(cookies != null){
             // user have cookies (revisit)
             for(int i=0; i<cookies.length; i++){
@@ -24,7 +25,7 @@ public class CookiesEx extends HttpServlet {
 
                 // identify cookie
                 if(name.equals("k") && val.equal("123")){
-                    out.print("Welcome Back " +n1);
+                    out.print("Welcome Back " +n1); // user already exists
                     uvisit = true;  // revisited user
                     break;
                 }
